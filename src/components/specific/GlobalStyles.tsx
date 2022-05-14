@@ -18,6 +18,7 @@ const GlobalStyles = () => {
           margin: 0,
           padding: 0,
           fontWeight: 300,
+          overflowX: "hidden",
         },
         a: {
           textDecoration: "none",

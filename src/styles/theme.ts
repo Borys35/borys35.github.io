@@ -3,6 +3,7 @@ const colors = {
   text: "#113BAE",
   bg: "#FDFFFF",
   bgDarker: "#ECF0F0",
+  black: "#000",
 };
 
 const fontFamily = "'Poppins', sans-serif";

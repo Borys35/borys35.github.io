@@ -17,7 +17,7 @@ const StyledButton = styled.button<Props>`
   border-radius: 3em;
   font-weight: bold;
   cursor: pointer;
-  transition: ${({ theme }) => `0.15s ${theme.timing}`};
+  transition: ${({ theme }) => `0.3s ${theme.timing}`};
 
   font-size: ${({ size }) =>
     size === "small" ? "1rem" : size === "medium" ? "1.25rem" : "1.5rem"};
@@ -28,11 +28,9 @@ const StyledButton = styled.button<Props>`
   border: 1px solid ${({ theme }) => theme.colors.primary};
 
   &:hover {
-    background-color: ${({ variant, theme }) =>
-      variant === "primary" && theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.text};
     border-color: ${({ theme }) => theme.colors.text};
-    color: ${({ variant, theme }) =>
-      variant === "secondary" && theme.colors.text};
+    color: ${({ theme }) => theme.colors.bg};
   }
 `;
 

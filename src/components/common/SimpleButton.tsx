@@ -23,11 +23,11 @@ const StyledButton = styled.button<Props>(
       position: "absolute",
       left: "100%",
       top: "50%",
-      transform: "translate(1em, -50%)",
+      transform: "translate(.75em, -50%)",
     },
 
     "&:hover svg": {
-      transform: "translate(1.5em, -50%)",
+      transform: "translate(1.25em, -50%)",
     },
   },
   ({ theme, size }) => ({
@@ -36,13 +36,13 @@ const StyledButton = styled.button<Props>(
       size === "small" ? "1.5rem" : size === "medium" ? "2rem" : "2.5rem",
 
     "&, & svg": {
-      transition: `0.15s ${theme.timing}`,
+      transition: `0.3s ${theme.timing}`,
     },
 
-    "&:hover, &:hover svg path": {
-      color: theme.colors.text,
-      fill: theme.colors.text,
-    },
+    // "&:hover, &:hover svg path": {
+    //   color: theme.colors.text,
+    //   fill: theme.colors.text,
+    // },
   })
 );
 

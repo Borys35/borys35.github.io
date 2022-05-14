@@ -7,6 +7,7 @@ declare module "@emotion/react" {
       text: string;
       bg: string;
       bgDarker: string;
+      black: string;
     };
     fontFamily: string;
     horizontalPadding: string;

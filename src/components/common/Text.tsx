@@ -7,10 +7,11 @@ interface Props extends React.HTMLAttributes<HTMLParagraphElement> {
 }
 
 const StyledText = styled.p<Props>(
-  { lineHeight: 1.6 },
+  { lineHeight: 1.5 },
   ({ theme, size, transform }) => ({
     color: theme.colors.text,
-    fontSize: size === "small" ? "1rem" : size === "medium" ? "1.5rem" : "2rem",
+    fontSize:
+      size === "small" ? "1.2rem" : size === "medium" ? "1.5rem" : "2rem",
     textTransform:
       transform === "uppercase"
         ? "uppercase"
