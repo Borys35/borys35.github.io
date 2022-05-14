@@ -14,12 +14,20 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 const StyledButton = styled.button<Props>(
   {
     all: "unset",
+    position: "relative",
     fontWeight: "bold",
     wordSpacing: ".5em",
     cursor: "pointer",
 
-    "&:hover": {
-      wordSpacing: "1em",
+    "& svg": {
+      position: "absolute",
+      left: "100%",
+      top: "50%",
+      transform: "translate(1em, -50%)",
+    },
+
+    "&:hover svg": {
+      transform: "translate(1.5em, -50%)",
     },
   },
   ({ theme, size }) => ({
@@ -27,11 +35,11 @@ const StyledButton = styled.button<Props>(
     fontSize:
       size === "small" ? "1.5rem" : size === "medium" ? "2rem" : "2.5rem",
 
-    "&, & *": {
+    "&, & svg": {
       transition: `0.15s ${theme.timing}`,
     },
 
-    "&:hover, &:hover *": {
+    "&:hover, &:hover svg path": {
       color: theme.colors.text,
       fill: theme.colors.text,
     },
