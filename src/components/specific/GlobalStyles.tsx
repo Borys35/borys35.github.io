@@ -19,6 +19,7 @@ const GlobalStyles = () => {
           padding: 0,
           fontWeight: 300,
           overflowX: "hidden",
+          fontSize: "12px",
         },
         a: {
           textDecoration: "none",
@@ -41,6 +42,18 @@ const GlobalStyles = () => {
         },
         h6: {
           fontSize: "1.5rem",
+        },
+
+        [theme.mq.lg]: {
+          body: {
+            fontSize: "14px",
+          },
+        },
+
+        [theme.mq.xl]: {
+          body: {
+            fontSize: "16px",
+          },
         },
       }}
     />

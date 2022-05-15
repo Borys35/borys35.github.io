@@ -12,5 +12,7 @@ declare module "@emotion/react" {
     fontFamily: string;
     horizontalPadding: string;
     timing: string;
+    bp: { [key: string]: number };
+    mq: { [key: string]: string };
   }
 }

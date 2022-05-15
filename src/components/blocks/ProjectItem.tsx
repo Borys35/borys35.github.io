@@ -13,14 +13,14 @@ interface Props {
 const ProjectItem: FC<Props> = ({ title, labels, permalink }) => {
   return (
     <div>
-      <Heading level={4} css={css({ marginBottom: "1.25rem" })}>
+      <Heading level={4} css={css({ marginBottom: ".75rem" })}>
         {title}
       </Heading>
       <div
         css={css({
           display: "flex",
           gap: "1rem",
-          marginBottom: ".5rem",
+          marginBottom: "1.25rem",
         })}
       >
         {labels.map((label) => (

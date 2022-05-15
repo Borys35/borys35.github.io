@@ -19,6 +19,7 @@ const IndexPage = () => {
         css={css({
           display: "grid",
           gap: "16rem",
+          marginBottom: "8rem",
         })}
       >
         {/* Hero */}
@@ -34,10 +35,16 @@ const IndexPage = () => {
             >
               <Heading
                 level={1}
-                css={css({
-                  textAlign: "center",
-                  marginBottom: "4rem",
-                })}
+                css={(theme) =>
+                  css({
+                    textAlign: "center",
+                    marginBottom: "4rem",
+                    marginTop: "4rem",
+                    [theme.mq.xl]: {
+                      marginTop: "0",
+                    },
+                  })
+                }
               >
                 Crisp, Unique Web Things*
               </Heading>
@@ -67,9 +74,16 @@ const IndexPage = () => {
               <Text
                 size="medium"
                 transform="uppercase"
-                css={css({ textAlign: "center" })}
+                css={(theme) =>
+                  css({
+                    textAlign: "center",
+                    marginTop: "4rem",
+                    [theme.mq.lg]: { marginTop: "0" },
+                  })
+                }
               >
-                *Web experience with technology you want on your site
+                *Fast, reliable and user-friendly. Web experience with
+                technologies you want on your website.
               </Text>
             </Col>
           </Row>
@@ -132,12 +146,18 @@ const IndexPage = () => {
                   src="../images/planet.png"
                   alt=""
                   placeholder="tracedSVG"
-                  css={css({
-                    position: "absolute",
-                    left: "-80%",
-                    transform: "translate(0, -40%) rotate(20deg)",
-                    pointerEvents: "none",
-                  })}
+                  css={(theme) =>
+                    css({
+                      position: "absolute",
+                      left: "-80%",
+                      transform: "translate(0, -40%) rotate(20deg)",
+                      pointerEvents: "none",
+                      display: "none",
+                      [theme.mq.md]: {
+                        display: "block",
+                      },
+                    })
+                  }
                 />
               </div>
             </Col>
@@ -174,26 +194,42 @@ const IndexPage = () => {
             </Col>
           </Row>
         </Container>
+
+        {/* Contact */}
         <Container fluid>
           <Row>
-            <Col offset={{ md: 2 }} md={4}>
-              <Heading level={2} css={css({ marginBottom: "3rem" })}>
+            <Col offset={{ xl: 2, lg: 1 }} xl={4} lg={5} md={6}>
+              <Heading
+                level={2}
+                css={(theme) =>
+                  css({
+                    marginBottom: "2.5rem",
+                    [theme.mq.lg]: { marginBottom: "4rem" },
+                  })
+                }
+              >
                 Let's work together
               </Heading>
-              <Col offset={{ md: 3 }} md={8}>
-                <Text size="small" css={css({ marginBottom: "1rem" })}>
+              <Col offset={{ lg: 3 }} lg={9}>
+                <Text size="small" css={css({ marginBottom: "1.5rem" })}>
                   I would love to hear from you and see your projects and ideas.
                 </Text>
-                <Button size="large" css={css({ marginTop: "auto" })}>
-                  Get in touch
-                </Button>
+                <Button size="large">Get in touch</Button>
               </Col>
             </Col>
-            <Col md={4}>
+            <Col xl={5} md={6}>
               <StaticImage
                 src="../images/earth.png"
                 alt="Earth"
                 placeholder="tracedSVG"
+                css={(theme) =>
+                  css({
+                    pointerEvents: "none",
+                    [theme.mq.lg]: {
+                      marginTop: "-6rem",
+                    },
+                  })
+                }
               />
             </Col>
           </Row>

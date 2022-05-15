@@ -33,7 +33,7 @@ const StyledButton = styled.button<Props>(
   ({ theme, size }) => ({
     color: theme.colors.primary,
     fontSize:
-      size === "small" ? "1.5rem" : size === "medium" ? "2rem" : "2.5rem",
+      size === "small" ? "1.5rem" : size === "medium" ? "2.25rem" : "3rem",
 
     "&, & svg": {
       transition: `0.3s ${theme.timing}`,

@@ -20,8 +20,8 @@ const Footer = () => {
 
   return (
     <StyledFooter>
-      <Text size="medium">&copy; {date.getFullYear()} Borys Kaczmarek</Text>
-      <Text size="medium">
+      <Text size="small">&copy; {date.getFullYear()} Borys Kaczmarek</Text>
+      <Text size="small">
         {date.getHours()}:
         {(date.getMinutes() <= 9 ? `0` : "") + date.getMinutes()}:
         {(date.getSeconds() <= 9 ? `0` : "") + date.getSeconds()}
