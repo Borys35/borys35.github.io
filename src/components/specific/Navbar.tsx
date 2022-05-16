@@ -1,10 +1,22 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import React, { useState } from "react";
 import { Hidden } from "react-grid-system";
 import Button from "../common/Button";
 import Logo from "./Logo";
 import NavbarMenu from "./NavbarMenu";
+
+// animations
+const fadeIn = keyframes`
+  from {
+    transform: translateY(-3rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 const StyledNav = styled.nav({
   padding: "1rem 0",
@@ -18,7 +30,13 @@ const Navbar = () => {
 
   return (
     <>
-      <StyledNav>
+      <StyledNav
+        css={(theme) =>
+          css({
+            animation: `${fadeIn} 1s ${theme.timing}`,
+          })
+        }
+      >
         <Logo />
         <div
           css={css({

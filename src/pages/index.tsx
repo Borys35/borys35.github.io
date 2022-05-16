@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import { Col, Container, Row } from "react-grid-system";
@@ -10,6 +10,42 @@ import SimpleButton from "../components/common/SimpleButton";
 import Text from "../components/common/Text";
 import Layout from "../components/specific/Layout";
 import theme from "../styles/theme";
+
+// animations
+const mainImageFadeIn = keyframes`
+  from {
+    transform: rotate(5deg) scale(1.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+`;
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    transform: translateY(3rem);
+  }
+  60% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+// const fadeIn = keyframes`
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// `;
 
 // markup
 const IndexPage = () => {
@@ -38,8 +74,10 @@ const IndexPage = () => {
                 css={(theme) =>
                   css({
                     textAlign: "center",
-                    marginBottom: "4rem",
+                    marginBottom: "3rem",
                     marginTop: "4rem",
+                    paddingBottom: "1rem",
+                    animation: `${fadeIn} 1.5s ${theme.timing} .8s both`,
                     [theme.mq.xl]: {
                       marginTop: "0",
                     },
@@ -49,8 +87,25 @@ const IndexPage = () => {
                 Crisp, Unique Web Things*
               </Heading>
               <ButtonGroup css={css({ justifyContent: "center" })}>
-                <Button size="large">Projects</Button>
-                <Button size="large" variant="secondary">
+                <Button
+                  size="large"
+                  css={(theme) =>
+                    css({
+                      animation: `${fadeIn} 1.5s ${theme.timing} 1.2s both`,
+                    })
+                  }
+                >
+                  Projects
+                </Button>
+                <Button
+                  size="large"
+                  variant="secondary"
+                  css={(theme) =>
+                    css({
+                      animation: `${fadeIn} 1.5s ${theme.timing} 1.4s both`,
+                    })
+                  }
+                >
                   Get in touch
                 </Button>
               </ButtonGroup>
@@ -60,7 +115,11 @@ const IndexPage = () => {
                 src="../images/programmer.png"
                 alt="Programmer"
                 placeholder="tracedSVG"
-                css={css({ transform: "scale(1.3)", pointerEvents: "none" })}
+                css={css({
+                  transform: "scale(1.3)",
+                  pointerEvents: "none",
+                  animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
+                })}
               />
             </Col>
             <Col
@@ -78,6 +137,7 @@ const IndexPage = () => {
                   css({
                     textAlign: "center",
                     marginTop: "4rem",
+                    animation: `${fadeIn} 1.5s ${theme.timing} 1s both`,
                     [theme.mq.lg]: { marginTop: "0" },
                   })
                 }

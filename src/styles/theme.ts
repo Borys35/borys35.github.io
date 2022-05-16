@@ -10,7 +10,7 @@ const fontFamily = "'Poppins', sans-serif";
 
 const horizontalPadding = "clamp(1rem, 5vw, 3rem)";
 
-const timing = "cubic-bezier(.14,.79,.54,.98)";
+const timing = "cubic-bezier(.22,.61,.36,1)";
 
 const bp: { [key: string]: number } = {
   sm: 576,

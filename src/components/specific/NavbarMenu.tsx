@@ -116,7 +116,9 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
           css={(theme) =>
             css({
               color: theme.colors.bg,
-              animation: closed && `${show} 0.4s ease-in-out 0.9s both`,
+              animation: closed
+                ? `${show} 0.4s ease-in-out 0.9s both`
+                : undefined,
             })
           }
         >
@@ -134,9 +136,9 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
             css={(theme) =>
               css({
                 color: colored ? theme.colors.primary : theme.colors.bg,
-                animation:
-                  closed &&
-                  `${show} 0.4s ease-in-out ${1.3 + (i + 1) * 0.2}s both`,
+                animation: closed
+                  ? `${show} 0.4s ease-in-out ${1.3 + (i + 1) * 0.2}s both`
+                  : undefined,
                 "&:hover": {
                   textDecoration: "line-through",
                 },
