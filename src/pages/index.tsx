@@ -82,7 +82,7 @@ const IndexPage = () => {
                   })
                 }
               >
-                *Fast, reliable and user-friendly. Web experience with
+                *Fast, reliable and user-friendly apps. Web experience with
                 technologies you want on your website.
               </Text>
             </Col>

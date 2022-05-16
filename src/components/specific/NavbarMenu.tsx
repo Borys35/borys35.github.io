@@ -1,13 +1,34 @@
-import { css } from "@emotion/react";
+import { css, Global, keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { Link } from "gatsby";
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import Heading from "../common/Heading";
 import Text from "../common/Text";
 
 interface Props {
   onClose: () => void;
 }
+
+const pop = keyframes`
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  30%, 50% {
+    clip-path: circle(10% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
+`;
+
+const show = keyframes`
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+`;
 
 const StyledMenu = styled.div(
   {
@@ -19,11 +40,11 @@ const StyledMenu = styled.div(
     zIndex: 1,
     display: "flex",
     flexDirection: "column",
+    animation: `${pop} 1s ease-in-out`,
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.text,
     color: theme.colors.bg,
-    padding: `1.5rem ${theme.horizontalPadding}`,
   })
 );
 
@@ -47,22 +68,39 @@ const links = [
 ];
 
 const NavbarMenu: FC<Props> = ({ onClose }) => {
+  const [closing, setClosing] = useState(false);
   const hours = new Date().getHours();
 
+  function handleClose() {
+    setClosing(true);
+    setTimeout(() => {
+      onClose();
+    }, 1000);
+  }
+
   return (
-    <StyledMenu>
+    <StyledMenu
+      key={closing.toString()}
+      css={
+        closing &&
+        css({
+          animation: `${pop} 1s ease-in-out reverse`,
+          pointerEvents: "none",
+        })
+      }
+    >
       <svg
         width="30"
         height="30"
         viewBox="0 0 30 30"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        onClick={onClose}
+        onClick={handleClose}
         css={(theme) =>
           css({
             position: "absolute",
             right: theme.horizontalPadding,
-            top: "1rem",
+            top: "1.5rem",
             cursor: "pointer",
           })
         }
@@ -78,6 +116,7 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
           css={(theme) =>
             css({
               color: theme.colors.bg,
+              animation: closed && `${show} 0.4s ease-in-out 0.9s both`,
             })
           }
         >
@@ -89,12 +128,15 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
             : "evening"}
           ! 👋
         </Text>
-        {links.map(({ title, to, colored }) => (
+        {links.map(({ title, to, colored }, i) => (
           <Heading
             level={2}
             css={(theme) =>
               css({
                 color: colored ? theme.colors.primary : theme.colors.bg,
+                animation:
+                  closed &&
+                  `${show} 0.4s ease-in-out ${1.3 + (i + 1) * 0.2}s both`,
                 "&:hover": {
                   textDecoration: "line-through",
                 },
@@ -105,6 +147,13 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
           </Heading>
         ))}
       </StyledList>
+      <Global
+        styles={{
+          body: {
+            overflow: "hidden",
+          },
+        }}
+      />
     </StyledMenu>
   );
 };
