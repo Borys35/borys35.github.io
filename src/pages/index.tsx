@@ -9,6 +9,7 @@ import Heading from "../components/common/Heading";
 import SimpleButton from "../components/common/SimpleButton";
 import Text from "../components/common/Text";
 import Layout from "../components/specific/Layout";
+import SocialList from "../components/specific/socials/SocialList";
 import theme from "../styles/theme";
 
 // animations
@@ -127,6 +128,7 @@ const IndexPage = () => {
               css={css({
                 display: "flex",
                 justifyContent: "center",
+                alignItems: "center",
                 flexDirection: "column",
               })}
             >
@@ -137,6 +139,7 @@ const IndexPage = () => {
                   css({
                     textAlign: "center",
                     marginTop: "4rem",
+                    marginBottom: "2rem",
                     animation: `${fadeIn} 1.5s ${theme.timing} 1s both`,
                     [theme.mq.lg]: { marginTop: "0" },
                   })
@@ -145,6 +148,11 @@ const IndexPage = () => {
                 *Fast, reliable and user-friendly apps. Web experience with
                 technologies you want on your website.
               </Text>
+              <SocialList
+                css={(theme) =>
+                  css({ animation: `${fadeIn} 1.5s ${theme.timing} 1.2s both` })
+                }
+              />
             </Col>
           </Row>
         </Container>
@@ -271,6 +279,7 @@ const IndexPage = () => {
                 Let's work together
               </Heading>
               <Col offset={{ lg: 3 }} lg={9}>
+                <SocialList css={css({ marginBottom: "1.5rem" })} />
                 <Text size="small" css={css({ marginBottom: "1.5rem" })}>
                   I would love to hear from you and see your projects and ideas.
                 </Text>

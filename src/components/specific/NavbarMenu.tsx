@@ -4,6 +4,7 @@ import { Link } from "gatsby";
 import React, { FC, useState } from "react";
 import Heading from "../common/Heading";
 import Text from "../common/Text";
+import SocialList from "./socials/SocialList";
 
 interface Props {
   onClose: () => void;
@@ -40,11 +41,11 @@ const StyledMenu = styled.div(
     zIndex: 1,
     display: "flex",
     flexDirection: "column",
-    animation: `${pop} 1s ease-in-out`,
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.text,
     color: theme.colors.bg,
+    animation: `${pop} 1s ${theme.timing}`,
   })
 );
 
@@ -148,6 +149,13 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
             <Link to={to}>{title}</Link>
           </Heading>
         ))}
+        <SocialList
+          css={(theme) =>
+            css({
+              color: theme.colors.bg,
+            })
+          }
+        />
       </StyledList>
       <Global
         styles={{
