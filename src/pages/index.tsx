@@ -39,15 +39,6 @@ const fadeIn = keyframes`
   }
 `;
 
-// const fadeIn = keyframes`
-//   from {
-//     opacity: 0;
-//   }
-//   to {
-//     opacity: 1;
-//   }
-// `;
-
 // markup
 const IndexPage = () => {
   return (

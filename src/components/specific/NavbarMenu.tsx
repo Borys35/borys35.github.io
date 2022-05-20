@@ -58,6 +58,7 @@ const StyledList = styled.div({
   textTransform: "uppercase",
   textAlign: "center",
   flex: 1,
+  padding: "0 1rem",
 });
 
 // data

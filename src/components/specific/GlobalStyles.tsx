@@ -56,6 +56,21 @@ const GlobalStyles = () => {
             fontSize: "16px",
           },
         },
+
+        "@keyframes fade-in": {
+          from: {
+            opacity: 0,
+            clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+            transform: "translateY(3rem)",
+          },
+          "60%": {
+            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+          },
+          to: {
+            opacity: 1,
+            transform: "translateY(0)",
+          },
+        },
       }}
     />
   );

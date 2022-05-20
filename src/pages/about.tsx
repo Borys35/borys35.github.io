@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { Col, Container, Hidden, Row, Visible } from "react-grid-system";
@@ -6,6 +6,33 @@ import Button from "../components/common/Button";
 import Heading from "../components/common/Heading";
 import Text from "../components/common/Text";
 import Layout from "../components/specific/Layout";
+
+// animations
+const mainImageFadeIn = keyframes`
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+`;
+
+const breakOff = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(45deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(40deg);
+  }
+`;
 
 const AboutPage = () => {
   return (
@@ -39,6 +66,7 @@ const AboutPage = () => {
                       marginTop: "4rem",
                       textAlign: "center",
                       marginBottom: "1rem",
+                      animation: `fade-in 1.5s ${theme.timing} .8s both`,
                       [theme.mq.lg]: {
                         marginTop: "6rem",
                         marginBottom: 0,
@@ -56,11 +84,14 @@ const AboutPage = () => {
                 <Hidden xs sm md>
                   <Heading
                     level={1}
-                    css={css({
-                      gridArea: "2 / 3 / 3 / 4",
-                      transformOrigin: "0 0",
-                      transform: "rotate(15deg)",
-                    })}
+                    css={(theme) =>
+                      css({
+                        gridArea: "2 / 3 / 3 / 4",
+                        transformOrigin: "0 0",
+                        transform: "rotate(0deg)",
+                        animation: `${breakOff} 1.5s ease-in-out 2.6s both, fade-in 1.5s ${theme.timing} .9s backwards`,
+                      })
+                    }
                   >
                     me.
                   </Heading>
@@ -72,6 +103,7 @@ const AboutPage = () => {
                     css({
                       textAlign: "center",
                       marginBottom: "2rem",
+                      animation: `fade-in 1.5s ${theme.timing} 1s both`,
                       [theme.mq.lg]: {
                         marginBottom: 0,
                         gridArea: "3 / 1 / 4 / 2",
@@ -87,10 +119,9 @@ const AboutPage = () => {
                   css={(theme) =>
                     css({
                       gridArea: "4 / 3 / 5 / 4",
-                      marginBottom: "4rem",
+                      animation: `fade-in 1.5s ${theme.timing} 1.1s both`,
                       [theme.mq.lg]: {
-                        marginBottom: 0,
-                        alignSelf: "flex-start",
+                        placeSelf: "start",
                       },
                     })
                   }
@@ -100,11 +131,15 @@ const AboutPage = () => {
                 <StaticImage
                   src="../images/about-hero.png"
                   alt=""
+                  placeholder="tracedSVG"
                   css={(theme) =>
                     css({
                       maxWidth: "12rem",
+                      animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
+                      marginTop: "4rem",
                       [theme.mq.lg]: {
                         maxWidth: "unset",
+                        marginTop: 0,
                         gridArea: "1 / 2 / 5 / 3",
                       },
                     })
