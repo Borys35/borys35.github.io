@@ -196,7 +196,9 @@ const IndexPage = () => {
           </Row>
           <Row>
             <Col offset={{ xs: 3, sm: 7 }}>
-              <SimpleButton size="large">About</SimpleButton>
+              <SimpleButton size="large" to="/about">
+                About
+              </SimpleButton>
             </Col>
           </Row>
         </Container>

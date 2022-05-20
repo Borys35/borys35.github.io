@@ -16,6 +16,7 @@ const StyledButton = styled.button<Props>`
   padding: 0.5em 2em;
   border-radius: 3em;
   font-weight: bold;
+  text-align: center;
   cursor: pointer;
   transition: ${({ theme }) => `0.3s ${theme.timing}`};
 

@@ -11,6 +11,7 @@ const GlobalStyles = () => {
           margin: 0,
           padding: 0,
           fontFamily: theme.fontFamily,
+          WebkitTapHighlightColor: "transparent",
         },
         body: {
           backgroundColor: theme.colors.bg,

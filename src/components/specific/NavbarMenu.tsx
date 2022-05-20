@@ -63,9 +63,9 @@ const StyledList = styled.div({
 // data
 const links = [
   { title: "Home", to: "/" },
-  { title: "Projects", to: "/" },
-  { title: "About", to: "/" },
-  { title: "Get in touch", to: "/", colored: true },
+  { title: "Projects", to: "/projects" },
+  { title: "About", to: "/about" },
+  { title: "Get in touch", to: "/contact", colored: true },
 ];
 
 const NavbarMenu: FC<Props> = ({ onClose }) => {
