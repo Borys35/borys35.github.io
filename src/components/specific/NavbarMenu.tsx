@@ -38,7 +38,7 @@ const StyledMenu = styled.div(
     left: 0,
     right: 0,
     bottom: 0,
-    zIndex: 1,
+    zIndex: 2,
     display: "flex",
     flexDirection: "column",
   },
@@ -82,7 +82,7 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
 
   return (
     <StyledMenu
-      key={closing.toString()}
+      key={`navbar-menu-${closing.toString()}`}
       css={
         closing &&
         css({
@@ -161,8 +161,9 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
       </StyledList>
       <Global
         styles={{
-          body: {
+          html: {
             overflow: "hidden",
+            marginRight: "16px",
           },
         }}
       />
