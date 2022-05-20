@@ -15,11 +15,11 @@ import theme from "../styles/theme";
 // animations
 const mainImageFadeIn = keyframes`
   from {
-    transform: rotate(5deg) scale(1.6);
+    transform: rotate(5deg) scale(1.5);
     opacity: 0;
   }
   to {
-    transform: scale(1.3);
+    transform: scale(1.1);
     opacity: 1;
   }
 `;
@@ -65,7 +65,7 @@ const IndexPage = () => {
                 level={1}
                 css={(theme) =>
                   css({
-                    textAlign: "center",
+                    // textAlign: "center",
                     marginBottom: "3rem",
                     marginTop: "4rem",
                     paddingBottom: "1rem",
@@ -78,7 +78,11 @@ const IndexPage = () => {
               >
                 Crisp, Unique Web Things*
               </Heading>
-              <ButtonGroup css={css({ justifyContent: "center" })}>
+              <ButtonGroup
+                css={css({
+                  /* justifyContent: "center"  */
+                })}
+              >
                 <Button
                   size="large"
                   css={(theme) =>
@@ -108,7 +112,6 @@ const IndexPage = () => {
                 alt="Programmer"
                 placeholder="tracedSVG"
                 css={css({
-                  transform: "scale(1.3)",
                   pointerEvents: "none",
                   animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
                 })}
@@ -119,7 +122,7 @@ const IndexPage = () => {
               css={css({
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
+                alignItems: "flex-end",
                 flexDirection: "column",
               })}
             >
@@ -128,7 +131,7 @@ const IndexPage = () => {
                 transform="uppercase"
                 css={(theme) =>
                   css({
-                    textAlign: "center",
+                    textAlign: "right",
                     marginTop: "4rem",
                     marginBottom: "2rem",
                     animation: `${fadeIn} 1.5s ${theme.timing} 1s both`,
