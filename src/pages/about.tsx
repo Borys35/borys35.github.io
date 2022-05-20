@@ -221,7 +221,7 @@ const AboutPage = () => {
                   <br />
                   <br />
                   Currently, I can call myself a self-taught web developer who
-                  loves what he does and makes high-level web-apps.
+                  loves what he does and makes high-level web apps.
                 </Text>
               </div>
             </Col>

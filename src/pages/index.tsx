@@ -65,11 +65,14 @@ const IndexPage = () => {
                 level={1}
                 css={(theme) =>
                   css({
-                    // textAlign: "center",
+                    textAlign: "center",
                     marginBottom: "3rem",
                     marginTop: "4rem",
                     paddingBottom: "1rem",
                     animation: `${fadeIn} 1.5s ${theme.timing} .8s both`,
+                    [theme.mq.lg]: {
+                      textAlign: "left",
+                    },
                     [theme.mq.xl]: {
                       marginTop: "0",
                     },
@@ -79,9 +82,15 @@ const IndexPage = () => {
                 Crisp, Unique Web Things*
               </Heading>
               <ButtonGroup
-                css={css({
-                  /* justifyContent: "center"  */
-                })}
+                css={(theme) =>
+                  css({
+                    justifyContent: "center",
+
+                    [theme.mq.lg]: {
+                      justifyContent: "flex-start",
+                    },
+                  })
+                }
               >
                 <Button
                   size="large"
@@ -119,23 +128,29 @@ const IndexPage = () => {
             </Col>
             <Col
               lg={2}
-              css={css({
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "flex-end",
-                flexDirection: "column",
-              })}
+              css={(theme) =>
+                css({
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  flexDirection: "column",
+
+                  [theme.mq.lg]: {
+                    alignItems: "flex-end",
+                  },
+                })
+              }
             >
               <Text
                 size="medium"
                 transform="uppercase"
                 css={(theme) =>
                   css({
-                    textAlign: "right",
+                    textAlign: "center",
                     marginTop: "4rem",
                     marginBottom: "2rem",
                     animation: `${fadeIn} 1.5s ${theme.timing} 1s both`,
-                    [theme.mq.lg]: { marginTop: "0" },
+                    [theme.mq.lg]: { marginTop: "0", textAlign: "right" },
                   })
                 }
               >
