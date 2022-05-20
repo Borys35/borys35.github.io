@@ -13,6 +13,9 @@ const GlobalStyles = () => {
           fontFamily: theme.fontFamily,
           WebkitTapHighlightColor: "transparent",
         },
+        html: {
+          scrollBehavior: "smooth",
+        },
         body: {
           backgroundColor: theme.colors.bg,
           color: theme.colors.text,

@@ -6,6 +6,8 @@ import Button from "../components/common/Button";
 import Heading from "../components/common/Heading";
 import Text from "../components/common/Text";
 import Layout from "../components/specific/Layout";
+// @ts-ignore
+import dots from "../images/dots.svg";
 
 // animations
 const mainImageFadeIn = keyframes`
@@ -37,119 +39,195 @@ const breakOff = keyframes`
 const AboutPage = () => {
   return (
     <Layout pageTitle="About">
-      <header>
-        <Container fluid>
-          <Row>
-            <Col xl={8} offset={{ xl: 2 }}>
-              <div
-                css={(theme) =>
-                  css({
-                    maxWidth: theme.bp.sm,
-                    margin: "0 auto",
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    [theme.mq.lg]: {
-                      maxWidth: "unset",
-                      display: "grid",
-                      gap: "1rem",
-                      gridTemplateColumns: "2fr 2fr 2fr",
-                      gridTemplateRows: "auto auto auto 1fr",
-                    },
-                  })
-                }
-              >
-                <Heading
-                  level={1}
+      <div
+        css={css({
+          display: "grid",
+          gap: "12rem",
+          marginBottom: "8rem",
+        })}
+      >
+        <header>
+          <Container fluid>
+            <Row>
+              <Col xl={8} offset={{ xl: 2 }}>
+                <div
                   css={(theme) =>
                     css({
-                      marginTop: "4rem",
-                      textAlign: "center",
-                      marginBottom: "1rem",
-                      animation: `fade-in 1.5s ${theme.timing} .8s both`,
+                      maxWidth: theme.bp.sm,
+                      margin: "0 auto",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
                       [theme.mq.lg]: {
-                        marginTop: "6rem",
-                        marginBottom: 0,
-                        gridArea: "1 / 1 / 2 / 2",
-                        textAlign: "right",
+                        maxWidth: "unset",
+                        display: "grid",
+                        gap: "1rem",
+                        gridTemplateColumns: "2fr 2fr 2fr",
+                        gridTemplateRows: "auto auto auto 1fr",
                       },
                     })
                   }
                 >
-                  About{" "}
-                  <Visible xs sm md>
-                    me.
-                  </Visible>
-                </Heading>
-                <Hidden xs sm md>
                   <Heading
                     level={1}
                     css={(theme) =>
                       css({
-                        gridArea: "2 / 3 / 3 / 4",
-                        transformOrigin: "0 0",
-                        transform: "rotate(0deg)",
-                        animation: `${breakOff} 1.5s ease-in-out 2.6s both, fade-in 1.5s ${theme.timing} .9s backwards`,
+                        marginTop: "4rem",
+                        textAlign: "center",
+                        marginBottom: "1rem",
+                        animation: `fade-in 1.5s ${theme.timing} .8s both`,
+                        [theme.mq.lg]: {
+                          marginTop: "6rem",
+                          marginBottom: 0,
+                          gridArea: "1 / 1 / 2 / 2",
+                          textAlign: "right",
+                        },
                       })
                     }
                   >
-                    me.
+                    About{" "}
+                    <Visible xs sm md>
+                      me.
+                    </Visible>
                   </Heading>
-                </Hidden>
+                  <Hidden xs sm md>
+                    <Heading
+                      level={1}
+                      css={(theme) =>
+                        css({
+                          gridArea: "2 / 3 / 3 / 4",
+                          transformOrigin: "0 0",
+                          transform: "rotate(0deg)",
+                          animation: `${breakOff} 1.5s ease-in-out 2.6s both, fade-in 1.5s ${theme.timing} .9s backwards`,
+                        })
+                      }
+                    >
+                      me.
+                    </Heading>
+                  </Hidden>
+                  <Text
+                    size="medium"
+                    transform="uppercase"
+                    css={(theme) =>
+                      css({
+                        textAlign: "center",
+                        marginBottom: "2rem",
+                        animation: `fade-in 1.5s ${theme.timing} 1s both`,
+                        [theme.mq.lg]: {
+                          marginBottom: 0,
+                          gridArea: "3 / 1 / 4 / 2",
+                          textAlign: "right",
+                        },
+                      })
+                    }
+                  >
+                    I would love to introduce myself to you, gorgeous person
+                  </Text>
+                  <Button
+                    size="large"
+                    href="#more"
+                    css={(theme) =>
+                      css({
+                        gridArea: "4 / 3 / 5 / 4",
+                        animation: `fade-in 1.5s ${theme.timing} 1.1s both`,
+                        [theme.mq.lg]: {
+                          placeSelf: "start",
+                        },
+                      })
+                    }
+                  >
+                    Scroll down
+                  </Button>
+                  <StaticImage
+                    src="../images/about-hero.png"
+                    alt=""
+                    placeholder="tracedSVG"
+                    css={(theme) =>
+                      css({
+                        maxWidth: "12rem",
+                        animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
+                        marginTop: "4rem",
+                        [theme.mq.lg]: {
+                          maxWidth: "unset",
+                          marginTop: 0,
+                          gridArea: "1 / 2 / 5 / 3",
+                        },
+                      })
+                    }
+                  />
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </header>
+
+        <Container
+          fluid
+          id="more"
+          css={css({
+            paddingTop: "6rem",
+          })}
+        >
+          <Row>
+            <Col offset={{ xl: 2 }} xl={3}>
+              <div
+                css={(theme) =>
+                  css({
+                    [theme.mq.xl]: {
+                      marginRight: "0rem",
+                    },
+                  })
+                }
+              >
+                <div
+                  css={css({
+                    position: "relative",
+                  })}
+                >
+                  <StaticImage
+                    src="../images/me1.png"
+                    alt="photo of me"
+                    placeholder="blurred"
+                  />
+                  <img
+                    src={dots}
+                    css={css({
+                      position: "absolute",
+                      top: 0,
+                      right: 0,
+                      transform: "translate(50%, -25%)",
+                    })}
+                  />
+                </div>
+              </div>
+            </Col>
+            <Col xl={5} offset={{ xl: 2 }}>
+              <div
+                css={css({
+                  display: "flex",
+                  alignItems: "center",
+                  height: "100%",
+                })}
+              >
                 <Text
                   size="medium"
-                  transform="uppercase"
-                  css={(theme) =>
-                    css({
-                      textAlign: "center",
-                      marginBottom: "2rem",
-                      animation: `fade-in 1.5s ${theme.timing} 1s both`,
-                      [theme.mq.lg]: {
-                        marginBottom: 0,
-                        gridArea: "3 / 1 / 4 / 2",
-                        textAlign: "right",
-                      },
-                    })
-                  }
+                  css={css({
+                    textAlign: "right",
+                  })}
                 >
-                  I would love to introduce myself to you, gorgeous person
+                  Born in 2004. When I was 13 I coded my first “Hello World!”
+                  program in C++. Since then I've been more and more excited to
+                  learn new technologies and bind my future with programming.
+                  <br />
+                  <br />
+                  Currently, I can call myself a self-taught web developer who
+                  loves what he does and makes high-level web-apps.
                 </Text>
-                <Button
-                  size="large"
-                  css={(theme) =>
-                    css({
-                      gridArea: "4 / 3 / 5 / 4",
-                      animation: `fade-in 1.5s ${theme.timing} 1.1s both`,
-                      [theme.mq.lg]: {
-                        placeSelf: "start",
-                      },
-                    })
-                  }
-                >
-                  Scroll down
-                </Button>
-                <StaticImage
-                  src="../images/about-hero.png"
-                  alt=""
-                  placeholder="tracedSVG"
-                  css={(theme) =>
-                    css({
-                      maxWidth: "12rem",
-                      animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
-                      marginTop: "4rem",
-                      [theme.mq.lg]: {
-                        maxWidth: "unset",
-                        marginTop: 0,
-                        gridArea: "1 / 2 / 5 / 3",
-                      },
-                    })
-                  }
-                />
               </div>
             </Col>
           </Row>
         </Container>
-      </header>
+      </div>
     </Layout>
   );
 };

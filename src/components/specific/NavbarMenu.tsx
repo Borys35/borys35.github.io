@@ -115,6 +115,7 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
       <StyledList>
         <Text
           size="small"
+          transform="lowercase"
           css={(theme) =>
             css({
               color: theme.colors.bg,
