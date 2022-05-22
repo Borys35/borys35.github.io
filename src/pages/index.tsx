@@ -24,21 +24,6 @@ const mainImageFadeIn = keyframes`
   }
 `;
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
-    transform: translateY(3rem);
-  }
-  60% {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
 // markup
 const IndexPage = () => {
   return (
@@ -46,7 +31,7 @@ const IndexPage = () => {
       <div
         css={css({
           display: "grid",
-          gap: "16rem",
+          gap: "20rem",
           marginBottom: "8rem",
         })}
       >
@@ -69,7 +54,7 @@ const IndexPage = () => {
                     marginBottom: "3rem",
                     marginTop: "4rem",
                     paddingBottom: "1rem",
-                    animation: `${fadeIn} 1.5s ${theme.timing} .8s both`,
+                    animation: `fade-in 1.5s ${theme.timing} .8s both`,
                     [theme.mq.lg]: {
                       textAlign: "left",
                     },
@@ -96,7 +81,7 @@ const IndexPage = () => {
                   size="large"
                   css={(theme) =>
                     css({
-                      animation: `${fadeIn} 1.5s ${theme.timing} 1.2s both`,
+                      animation: `fade-in 1.5s ${theme.timing} 1.2s both`,
                     })
                   }
                 >
@@ -107,7 +92,7 @@ const IndexPage = () => {
                   variant="secondary"
                   css={(theme) =>
                     css({
-                      animation: `${fadeIn} 1.5s ${theme.timing} 1.4s both`,
+                      animation: `fade-in 1.5s ${theme.timing} 1.4s both`,
                     })
                   }
                 >
@@ -149,7 +134,7 @@ const IndexPage = () => {
                     textAlign: "center",
                     marginTop: "4rem",
                     marginBottom: "2rem",
-                    animation: `${fadeIn} 1.5s ${theme.timing} 1s both`,
+                    animation: `fade-in 1.5s ${theme.timing} 1s both`,
                     [theme.mq.lg]: { marginTop: "0", textAlign: "right" },
                   })
                 }
@@ -159,7 +144,7 @@ const IndexPage = () => {
               </Text>
               <SocialList
                 css={(theme) =>
-                  css({ animation: `${fadeIn} 1.5s ${theme.timing} 1.2s both` })
+                  css({ animation: `fade-in 1.5s ${theme.timing} 1.2s both` })
                 }
               />
             </Col>

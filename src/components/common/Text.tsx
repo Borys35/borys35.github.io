@@ -2,16 +2,21 @@ import styled from "@emotion/styled";
 import React, { FC } from "react";
 
 interface Props extends React.HTMLAttributes<HTMLParagraphElement> {
-  size?: "small" | "medium" | "large";
+  size?: "xsmall" | "small" | "medium" | "large";
   transform?: "uppercase" | "lowercase";
 }
 
 const StyledText = styled.p<Props>(
   { lineHeight: 1.5 },
-  ({ theme, size, transform }) => ({
-    color: theme.colors.text,
+  ({ size, transform }) => ({
     fontSize:
-      size === "small" ? "1.2rem" : size === "medium" ? "1.5rem" : "2rem",
+      size === "xsmall"
+        ? "1rem"
+        : size === "small"
+        ? "1.2rem"
+        : size === "medium"
+        ? "1.5rem"
+        : "2rem",
     textTransform:
       transform === "uppercase"
         ? "uppercase"

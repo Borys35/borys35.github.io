@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Borys Kaczmarek Portfolio`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://borys35.github.io/`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -13,12 +13,17 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/logo.png",
       },
     },
     "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-plugin-sharp",
+      options: {
+        icon: "src/images/logo.png",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

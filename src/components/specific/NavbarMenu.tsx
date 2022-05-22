@@ -49,17 +49,24 @@ const StyledMenu = styled.div(
   })
 );
 
-const StyledList = styled.div({
-  display: "flex",
-  flexDirection: "column",
-  gap: "3rem",
-  alignItems: "center",
-  justifyContent: "center",
-  textTransform: "uppercase",
-  textAlign: "center",
-  flex: 1,
-  padding: "0 1rem",
-});
+const StyledList = styled.div(
+  {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    textTransform: "uppercase",
+    textAlign: "center",
+    flex: 1,
+    padding: "0 1rem",
+  },
+  ({ theme }) => ({
+    gap: "1.5rem",
+    [theme.mq.lg]: {
+      gap: "3rem",
+    },
+  })
+);
 
 // data
 const links = [
