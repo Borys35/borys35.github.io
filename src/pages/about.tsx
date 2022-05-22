@@ -2,6 +2,7 @@ import { css, keyframes } from "@emotion/react";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { Col, Container, Hidden, Row, Visible } from "react-grid-system";
+import AboutSkillItem from "../components/blocks/AboutSkillItem";
 import Button from "../components/common/Button";
 import Heading from "../components/common/Heading";
 import Text from "../components/common/Text";
@@ -36,6 +37,30 @@ const breakOff = keyframes`
   }
 `;
 
+// data
+const skills = [
+  {
+    title: "Frontend development",
+    labels: ["HTML", "CSS", "SASS", "CSS-in-JS", "JavaScript", "TypeScript"],
+  },
+  {
+    title: "Frameworks & libraries",
+    labels: ["React", "Next.js", "Gatsby", "Vue", "Svelte", "React Native"],
+  },
+  {
+    title: "Backend & databases",
+    labels: ["Node.js", "Express", "GraphQL", "MongoDB", "MySQL", "Firebase"],
+  },
+  {
+    title: "Designing",
+    labels: ["Figma", "Inkscape", "Design fundamentals & concepts"],
+  },
+  {
+    title: "CMS & e-commerce",
+    labels: ["Strapi", "Commerce.js"],
+  },
+];
+
 const AboutPage = () => {
   return (
     <Layout pageTitle="About">
@@ -44,6 +69,7 @@ const AboutPage = () => {
           display: "grid",
           gap: "12rem",
           marginBottom: "8rem",
+          alignItems: "stretch",
         })}
       >
         <header>
@@ -161,6 +187,7 @@ const AboutPage = () => {
           </Container>
         </header>
 
+        {/* Note about me */}
         <Container
           fluid
           id="more"
@@ -223,6 +250,35 @@ const AboutPage = () => {
                   Currently, I can call myself a self-taught web developer who
                   loves what he does and makes high-level web apps.
                 </Text>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
+        {/* Skills */}
+        <Container fluid css={css({ width: "100%" })}>
+          <Row>
+            <Col md={9} offset={{ md: 3 }}>
+              <Heading level={2}>Skills</Heading>
+            </Col>
+          </Row>
+          <Row>
+            <Col xl={10} offset={{ xl: 1 }}>
+              <div
+                css={(theme) =>
+                  css({
+                    display: "grid",
+                    gap: "4rem",
+                    marginTop: "6rem",
+                    [theme.mq.sm]: {
+                      gridTemplateColumns: "1fr 1fr",
+                    },
+                  })
+                }
+              >
+                {skills.map((skill) => (
+                  <AboutSkillItem {...skill} />
+                ))}
               </div>
             </Col>
           </Row>
