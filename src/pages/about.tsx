@@ -88,7 +88,7 @@ const AboutPage = () => {
                         maxWidth: "unset",
                         display: "grid",
                         gap: "1rem",
-                        gridTemplateColumns: "2fr 2fr 2fr",
+                        gridTemplateColumns: "3fr 2fr 3fr",
                         gridTemplateRows: "auto auto auto 1fr",
                       },
                     })
@@ -151,7 +151,10 @@ const AboutPage = () => {
                   </Text>
                   <Button
                     size="large"
-                    href="#more"
+                    onClick={() => {
+                      const el = document.getElementById("more");
+                      el?.scrollIntoView({ behavior: "smooth" });
+                    }}
                     css={(theme) =>
                       css({
                         gridArea: "4 / 3 / 5 / 4",
@@ -196,12 +199,15 @@ const AboutPage = () => {
           })}
         >
           <Row>
-            <Col offset={{ xl: 2 }} xl={3}>
+            <Col offset={{ lg: 2 }} lg={3} md={5}>
               <div
                 css={(theme) =>
                   css({
-                    [theme.mq.xl]: {
-                      marginRight: "0rem",
+                    maxWidth: "16rem",
+                    marginBottom: "3rem",
+                    [theme.mq.md]: {
+                      marginBottom: "0rem",
+                      maxWidth: "unset",
                     },
                   })
                 }
@@ -228,7 +234,7 @@ const AboutPage = () => {
                 </div>
               </div>
             </Col>
-            <Col xl={5} offset={{ xl: 2 }}>
+            <Col lg={5} md={6} offset={{ lg: 2, md: 1 }}>
               <div
                 css={css({
                   display: "flex",
@@ -238,9 +244,15 @@ const AboutPage = () => {
               >
                 <Text
                   size="medium"
-                  css={css({
-                    textAlign: "right",
-                  })}
+                  css={(theme) =>
+                    css({
+                      marginLeft: "4rem",
+                      textAlign: "right",
+                      [theme.mq.md]: {
+                        marginLeft: "0rem",
+                      },
+                    })
+                  }
                 >
                   Born in 2004. When I was 13 I coded my first “Hello World!”
                   program in C++. Since then I've been more and more excited to

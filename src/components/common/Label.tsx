@@ -10,9 +10,14 @@ const StyledLabel = styled.div(
     fontSize: "1.1rem",
     padding: ".4rem 1rem",
     borderRadius: ".25rem",
+    userSelect: "none",
+    "&:hover": {
+      transform: "scale(1.15)",
+    },
   },
   ({ theme }) => ({
     backgroundColor: theme.colors.bgDarker,
+    transition: `0.2s ${theme.timing}`,
   })
 );
 
