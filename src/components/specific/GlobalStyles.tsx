@@ -1,8 +1,9 @@
-import { Global } from "@emotion/react";
+import { Global, useTheme } from "@emotion/react";
 import React from "react";
-import theme from "../../styles/theme";
 
 const GlobalStyles = () => {
+  const theme = useTheme();
+
   return (
     <Global
       styles={{
@@ -16,11 +17,12 @@ const GlobalStyles = () => {
         body: {
           backgroundColor: theme.colors.bg,
           color: theme.colors.text,
-          margin: 0,
+          margin: "0 auto",
           padding: 0,
           fontWeight: 300,
           overflowX: "hidden",
           fontSize: "12px",
+          maxWidth: theme.bp.xxl,
         },
         a: {
           textDecoration: "none",

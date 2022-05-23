@@ -2,6 +2,7 @@ import { css, keyframes } from "@emotion/react";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import { Col, Container, Row } from "react-grid-system";
+import ContactSection from "../components/blocks/ContactSection";
 import ProjectItem from "../components/blocks/ProjectItem";
 import Button from "../components/common/Button";
 import ButtonGroup from "../components/common/ButtonGroup";
@@ -54,6 +55,7 @@ const IndexPage = () => {
                     marginBottom: "3rem",
                     marginTop: "4rem",
                     paddingBottom: "1rem",
+                    paddingRight: ".5rem",
                     animation: `fade-in 1.5s ${theme.timing} .8s both`,
                     [theme.mq.lg]: {
                       textAlign: "left",
@@ -79,6 +81,7 @@ const IndexPage = () => {
               >
                 <Button
                   size="large"
+                  to="/projects"
                   css={(theme) =>
                     css({
                       animation: `fade-in 1.5s ${theme.timing} 1.2s both`,
@@ -90,6 +93,7 @@ const IndexPage = () => {
                 <Button
                   size="large"
                   variant="secondary"
+                  to="/contact"
                   css={(theme) =>
                     css({
                       animation: `fade-in 1.5s ${theme.timing} 1.4s both`,
@@ -260,45 +264,7 @@ const IndexPage = () => {
         </Container>
 
         {/* Contact */}
-        <Container fluid>
-          <Row>
-            <Col offset={{ xl: 2, lg: 1 }} xl={4} lg={5} md={6}>
-              <Heading
-                level={2}
-                css={(theme) =>
-                  css({
-                    marginBottom: "2.5rem",
-                    [theme.mq.lg]: { marginBottom: "4rem" },
-                  })
-                }
-              >
-                Let's work together
-              </Heading>
-              <Col offset={{ lg: 3 }} lg={9}>
-                <SocialList css={css({ marginBottom: "1.5rem" })} />
-                <Text size="small" css={css({ marginBottom: "1.5rem" })}>
-                  I would love to hear from you and see your projects and ideas.
-                </Text>
-                <Button size="large">Get in touch</Button>
-              </Col>
-            </Col>
-            <Col xl={5} md={6}>
-              <StaticImage
-                src="../images/earth.png"
-                alt="Earth"
-                placeholder="tracedSVG"
-                css={(theme) =>
-                  css({
-                    pointerEvents: "none",
-                    [theme.mq.lg]: {
-                      marginTop: "-6rem",
-                    },
-                  })
-                }
-              />
-            </Col>
-          </Row>
-        </Container>
+        <ContactSection />
       </div>
     </Layout>
   );

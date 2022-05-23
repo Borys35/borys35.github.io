@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import { Col, Container, Hidden, Row, Visible } from "react-grid-system";
 import AboutSkillItem from "../components/blocks/AboutSkillItem";
+import ContactSection from "../components/blocks/ContactSection";
 import Button from "../components/common/Button";
 import Heading from "../components/common/Heading";
 import Text from "../components/common/Text";
@@ -41,7 +42,15 @@ const breakOff = keyframes`
 const skills = [
   {
     title: "Frontend development",
-    labels: ["HTML", "CSS", "SASS", "CSS-in-JS", "JavaScript", "TypeScript"],
+    labels: [
+      "HTML",
+      "CSS",
+      "SASS",
+      "CSS-in-JS",
+      "JavaScript",
+      "TypeScript",
+      "Redux",
+    ],
   },
   {
     title: "Frameworks & libraries",
@@ -49,7 +58,15 @@ const skills = [
   },
   {
     title: "Backend & databases",
-    labels: ["Node.js", "Express", "GraphQL", "MongoDB", "MySQL", "Firebase"],
+    labels: [
+      "Node.js",
+      "Express",
+      "REST API",
+      "GraphQL",
+      "MongoDB",
+      "MySQL",
+      "Firebase",
+    ],
   },
   {
     title: "Designing",
@@ -67,7 +84,7 @@ const AboutPage = () => {
       <div
         css={css({
           display: "grid",
-          gap: "12rem",
+          gap: "16rem",
           marginBottom: "8rem",
           alignItems: "stretch",
         })}
@@ -295,6 +312,9 @@ const AboutPage = () => {
             </Col>
           </Row>
         </Container>
+
+        {/* Contact */}
+        <ContactSection />
       </div>
     </Layout>
   );
