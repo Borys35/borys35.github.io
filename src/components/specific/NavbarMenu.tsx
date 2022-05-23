@@ -135,7 +135,7 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
           Good{" "}
           {hours > 6 && hours < 12
             ? "morning"
-            : hours < 18
+            : hours >= 12 && hours < 18
             ? "afternoon"
             : "evening"}
           ! 👋
