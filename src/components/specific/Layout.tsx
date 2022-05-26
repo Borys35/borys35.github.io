@@ -33,6 +33,7 @@ const Layout: FC<Props> = ({ children, pageTitle }) => {
           minHeight: "100vh",
           padding: `0 ${theme.horizontalPadding}`,
         })}
+        // TODO: Smooth scrolling
       >
         <Helmet>
           <title>{pageTitle} - Borys Kaczmarek</title>

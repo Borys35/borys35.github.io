@@ -164,7 +164,7 @@ const AboutPage = () => {
                       })
                     }
                   >
-                    I would love to introduce myself to you, gorgeous person
+                    I would love to introduce myself to you, gorgeous person.
                   </Text>
                   <Button
                     size="large"

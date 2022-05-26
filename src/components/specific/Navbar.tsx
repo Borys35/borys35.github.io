@@ -65,8 +65,7 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
       const y = window.scrollY;
-      console.log(y);
-      if (y > 300) {
+      if (y > 200) {
         setShow(true);
         setHiding(false);
       } else {
@@ -93,7 +92,7 @@ const Navbar = () => {
           })}
         >
           <Hidden xs>
-            <Button size="small" variant="secondary">
+            <Button size="small" variant="secondary" to="/contact">
               Get in touch
             </Button>
           </Hidden>

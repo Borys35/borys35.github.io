@@ -7,7 +7,6 @@ import ProjectItem from "../components/blocks/ProjectItem";
 import Button from "../components/common/Button";
 import ButtonGroup from "../components/common/ButtonGroup";
 import Heading from "../components/common/Heading";
-import SimpleButton from "../components/common/SimpleButton";
 import Text from "../components/common/Text";
 import Layout from "../components/specific/Layout";
 import SocialList from "../components/specific/socials/SocialList";
@@ -194,9 +193,12 @@ const IndexPage = () => {
           </Row>
           <Row>
             <Col offset={{ xs: 3, sm: 7 }}>
-              <SimpleButton size="large" to="/about">
+              {/* <SimpleButton size="large" to="/about">
                 About
-              </SimpleButton>
+              </SimpleButton> */}
+              <Button size="large" to="/about">
+                About
+              </Button>
             </Col>
           </Row>
         </Container>
