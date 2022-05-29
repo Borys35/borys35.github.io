@@ -30,6 +30,7 @@ const config: GatsbyConfig = {
         name: "images",
         path: "./src/images/",
       },
+      // @ts-ignore
       __key: "images",
     },
     {
@@ -38,6 +39,7 @@ const config: GatsbyConfig = {
         name: "pages",
         path: "./src/pages/",
       },
+      // @ts-ignore
       __key: "pages",
     },
   ],

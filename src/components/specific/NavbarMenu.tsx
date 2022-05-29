@@ -81,19 +81,21 @@ const NavbarMenu: FC<Props> = ({ onClose }) => {
   const hours = new Date().getHours();
 
   function handleClose() {
-    setClosing(true);
-    setTimeout(() => {
-      onClose();
-    }, 1000);
+    requestAnimationFrame(() => {
+      setClosing(true);
+      setTimeout(() => {
+        onClose();
+      }, 1000);
+    });
   }
 
   return (
     <StyledMenu
       key={`navbar-menu-${closing.toString()}`}
-      css={
+      css={(theme) =>
         closing &&
         css({
-          animation: `${pop} 1s ease-in-out reverse`,
+          animation: `${pop} 1s ${theme.timing} reverse`,
           pointerEvents: "none",
         })
       }
