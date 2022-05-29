@@ -66,7 +66,7 @@ const Layout: FC<Props> = ({ children, pageTitle }) => {
               <Col xs={4}>
                 <span css={line}></span>
               </Col>
-              <Col xs={5}>
+              <Col xs={4}>
                 <span css={line}></span>
               </Col>
             </Row>
