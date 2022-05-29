@@ -305,8 +305,8 @@ const AboutPage = () => {
                   })
                 }
               >
-                {skills.map((skill) => (
-                  <AboutSkillItem {...skill} />
+                {skills.map((skill, i) => (
+                  <AboutSkillItem key={`${skill}-${i}`} {...skill} />
                 ))}
               </div>
             </Col>

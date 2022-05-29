@@ -22,6 +22,10 @@ const config: GatsbyConfig = {
       resolve: "gatsby-plugin-sharp",
       options: {
         icon: "src/images/logo.png",
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `blurred`,
+        },
       },
     },
     {

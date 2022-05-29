@@ -1,16 +1,36 @@
 import { css, keyframes } from "@emotion/react";
+import { graphql, PageProps } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 import { Col, Container, Row } from "react-grid-system";
 import ContactSection from "../components/blocks/ContactSection";
-import ProjectItem from "../components/blocks/ProjectItem";
 import Button from "../components/common/Button";
 import ButtonGroup from "../components/common/ButtonGroup";
 import Heading from "../components/common/Heading";
 import Text from "../components/common/Text";
 import Layout from "../components/specific/Layout";
+import ProjectsGrid from "../components/specific/projects/ProjectsGrid";
 import SocialList from "../components/specific/socials/SocialList";
 import theme from "../styles/theme";
+
+// query
+export const pageQuery = graphql`
+  query HomeQuery {
+    allProject(filter: { featured: { eq: true } }) {
+      nodes {
+        id
+        name
+        permalink
+        tags
+        cover {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+`;
 
 // animations
 const mainImageFadeIn = keyframes`
@@ -25,7 +45,7 @@ const mainImageFadeIn = keyframes`
 `;
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }: PageProps<any>) => {
   return (
     <Layout pageTitle="Home">
       <div
@@ -231,13 +251,13 @@ const IndexPage = () => {
                 />
               </div>
             </Col>
-            <Col>
-              <Heading level={2}>
+            <Col md={5}>
+              <Heading level={2} css={css({ marginBottom: "4rem" })}>
                 Featured
                 <br />
                 projects
               </Heading>
-              <div
+              {/* <div
                 css={css({
                   marginTop: "6rem",
                   display: "flex",
@@ -249,7 +269,8 @@ const IndexPage = () => {
                   labels={["React"]}
                   permalink="chat-app"
                 />
-              </div>
+              </div> */}
+              <ProjectsGrid projects={data.allProject.nodes} />
             </Col>
           </Row>
           <Row
