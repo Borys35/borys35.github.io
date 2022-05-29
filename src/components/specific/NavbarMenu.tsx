@@ -14,9 +14,9 @@ const pop = keyframes`
   0% {
     clip-path: circle(0% at 50% 50%);
   }
-  30%, 50% {
+  /* 30%, 50% {
     clip-path: circle(10% at 50% 50%);
-  }
+  } */
   100% {
     clip-path: circle(100% at 50% 50%);
   }

@@ -118,7 +118,7 @@ const AboutPage = () => {
                         marginTop: "4rem",
                         textAlign: "center",
                         marginBottom: "1rem",
-                        animation: `fade-in 1.5s ${theme.timing} .8s both`,
+                        animation: `fade-in 1s ${theme.timing} .5s both`,
                         [theme.mq.lg]: {
                           marginTop: "6rem",
                           marginBottom: 0,
@@ -141,7 +141,7 @@ const AboutPage = () => {
                           gridArea: "2 / 3 / 3 / 4",
                           transformOrigin: "0 0",
                           transform: "rotate(0deg)",
-                          animation: `${breakOff} 1.5s ease-in-out 2.6s both, fade-in 1.5s ${theme.timing} .9s backwards`,
+                          animation: `${breakOff} 1s ease-in-out 2.6s both, fade-in 1s ${theme.timing} .6s backwards`,
                         })
                       }
                     >
@@ -155,7 +155,7 @@ const AboutPage = () => {
                       css({
                         textAlign: "center",
                         marginBottom: "2rem",
-                        animation: `fade-in 1.5s ${theme.timing} 1s both`,
+                        animation: `fade-in 1s ${theme.timing} 0.7s both`,
                         [theme.mq.lg]: {
                           marginBottom: 0,
                           gridArea: "3 / 1 / 4 / 2",
@@ -175,7 +175,7 @@ const AboutPage = () => {
                     css={(theme) =>
                       css({
                         gridArea: "4 / 3 / 5 / 4",
-                        animation: `fade-in 1.5s ${theme.timing} 1.1s both`,
+                        animation: `fade-in 1s ${theme.timing} 0.8s both`,
                         [theme.mq.lg]: {
                           placeSelf: "start",
                         },
@@ -191,7 +191,7 @@ const AboutPage = () => {
                     css={(theme) =>
                       css({
                         maxWidth: "12rem",
-                        animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
+                        animation: `${mainImageFadeIn} 1s ${theme.timing} both`,
                         marginTop: "4rem",
                         [theme.mq.lg]: {
                           maxWidth: "unset",

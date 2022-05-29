@@ -23,6 +23,7 @@ const GlobalStyles = () => {
           overflowX: "hidden",
           fontSize: "12px",
           maxWidth: theme.bp.xxl,
+          overscrollBehaviorY: "contain",
         },
         a: {
           textDecoration: "none",

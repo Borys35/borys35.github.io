@@ -55,7 +55,7 @@ const IndexPage = () => {
                     marginTop: "4rem",
                     paddingBottom: "1rem",
                     paddingRight: ".5rem",
-                    animation: `fade-in 1.5s ${theme.timing} .8s both`,
+                    animation: `fade-in 1s ${theme.timing} .5s both`,
                     [theme.mq.lg]: {
                       textAlign: "left",
                     },
@@ -83,7 +83,7 @@ const IndexPage = () => {
                   to="/projects"
                   css={(theme) =>
                     css({
-                      animation: `fade-in 1.5s ${theme.timing} 1.2s both`,
+                      animation: `fade-in 1s ${theme.timing} .8s both`,
                     })
                   }
                 >
@@ -95,7 +95,7 @@ const IndexPage = () => {
                   to="/contact"
                   css={(theme) =>
                     css({
-                      animation: `fade-in 1.5s ${theme.timing} 1.4s both`,
+                      animation: `fade-in 1s ${theme.timing} .9s both`,
                     })
                   }
                 >
@@ -110,7 +110,7 @@ const IndexPage = () => {
                 placeholder="tracedSVG"
                 css={css({
                   pointerEvents: "none",
-                  animation: `${mainImageFadeIn} 1.5s ${theme.timing} .6s both`,
+                  animation: `${mainImageFadeIn} 1s ${theme.timing} both`,
                 })}
               />
             </Col>
@@ -137,7 +137,7 @@ const IndexPage = () => {
                     textAlign: "center",
                     marginTop: "4rem",
                     marginBottom: "2rem",
-                    animation: `fade-in 1.5s ${theme.timing} 1s both`,
+                    animation: `fade-in 1s ${theme.timing} .6s both`,
                     [theme.mq.lg]: { marginTop: "0", textAlign: "right" },
                   })
                 }
@@ -147,7 +147,7 @@ const IndexPage = () => {
               </Text>
               <SocialList
                 css={(theme) =>
-                  css({ animation: `fade-in 1.5s ${theme.timing} 1.2s both` })
+                  css({ animation: `fade-in 1s ${theme.timing} .7s both` })
                 }
               />
             </Col>
