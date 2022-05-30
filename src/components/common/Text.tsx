@@ -15,8 +15,8 @@ const StyledText = styled.p<Props>(
         : size === "small"
         ? "1.2rem"
         : size === "medium"
-        ? "1.5rem"
-        : "2rem",
+        ? "1.45rem"
+        : "1.7rem",
     textTransform:
       transform === "uppercase"
         ? "uppercase"

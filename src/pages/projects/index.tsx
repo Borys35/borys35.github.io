@@ -45,12 +45,17 @@ const ProjectPage = ({ data }: PageProps<any>) => {
   return (
     <Layout pageTitle="Projects">
       <div
-        css={css({
-          display: "flex",
-          flexDirection: "column",
-          gap: "16rem",
-          marginBottom: "8rem",
-        })}
+        css={(theme) =>
+          css({
+            display: "flex",
+            flexDirection: "column",
+            gap: "10rem",
+            marginBottom: "8rem",
+            [theme.mq.lg]: {
+              gap: "16rem",
+            },
+          })
+        }
       >
         <header>
           <Container fluid>
@@ -106,7 +111,14 @@ const ProjectPage = ({ data }: PageProps<any>) => {
             </Row>
             <Row>
               <Col lg={3} offset={{ lg: 3 }}>
-                <div css={css({ marginTop: "3.5rem", marginBottom: "8rem" })}>
+                <div
+                  css={(theme) =>
+                    css({
+                      marginTop: "3.5rem",
+                      [theme.mq.lg]: { marginBottom: "8rem" },
+                    })
+                  }
+                >
                   <Button
                     size="large"
                     onClick={() => {

@@ -14,13 +14,16 @@ const GlobalStyles = () => {
           fontFamily: theme.fontFamily,
           WebkitTapHighlightColor: "transparent",
         },
+        "html, body": {
+          overflowX: "hidden",
+        },
         body: {
+          position: "relative",
           backgroundColor: theme.colors.bg,
           color: theme.colors.text,
           margin: "0 auto",
           padding: 0,
           fontWeight: 300,
-          overflowX: "hidden",
           fontSize: "12px",
           maxWidth: theme.bp.xxl,
           overscrollBehaviorY: "contain",
@@ -30,16 +33,16 @@ const GlobalStyles = () => {
           color: "inherit",
         },
         h1: {
-          fontSize: "5rem",
+          fontSize: "4.75rem",
         },
         h2: {
-          fontSize: "4rem",
+          fontSize: "3.75rem",
         },
         h3: {
-          fontSize: "3.5rem",
+          fontSize: "3.25rem",
         },
         h4: {
-          fontSize: "2.75rem",
+          fontSize: "2.5rem",
         },
         h5: {
           fontSize: "2rem",

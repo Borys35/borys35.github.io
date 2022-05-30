@@ -36,6 +36,10 @@ const Layout: FC<Props> = ({ children, pageTitle }) => {
         // TODO: Smooth scrolling
       >
         <Helmet>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
           <title>{pageTitle} - Borys Kaczmarek</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link

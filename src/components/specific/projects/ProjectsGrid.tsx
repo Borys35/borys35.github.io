@@ -7,11 +7,18 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   projects: Project[];
 }
 
-const StyledGrid = styled.div({
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
-  gap: "2rem",
-});
+const StyledGrid = styled.div(
+  {
+    display: "grid",
+    gap: "2rem",
+  },
+  ({ theme }) => ({
+    gridTemplateColumns: "1fr",
+    [theme.mq.md]: {
+      gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
+    },
+  })
+);
 
 const ProjectsGrid: FC<Props> = ({ projects, ...props }) => {
   return (

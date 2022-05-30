@@ -23,7 +23,7 @@ const config: GatsbyConfig = {
       options: {
         icon: "src/images/logo.png",
         defaults: {
-          formats: [`auto`, `webp`],
+          formats: [`auto`, `webp`, `avif`],
           placeholder: `blurred`,
         },
       },

@@ -58,10 +58,10 @@ const StyledList = styled.div(
     textTransform: "uppercase",
     textAlign: "center",
     flex: 1,
-    padding: "0 1rem",
   },
   ({ theme }) => ({
-    gap: "1.5rem",
+    gap: "2rem",
+    padding: `0 ${theme.horizontalPadding}`,
     [theme.mq.lg]: {
       gap: "3rem",
     },
