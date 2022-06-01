@@ -89,3 +89,36 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
     actions.createNode(node);
   });
 };
+
+export const createPages: GatsbyNode["createPages"] = async ({
+  graphql,
+  actions,
+}) => {
+  const results: any = await graphql(`
+    query PagesQuery {
+      allProject {
+        nodes {
+          id
+          name
+          permalink
+          tags
+          cover {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  results.data.allProject.nodes.forEach((project: Project) => {
+    actions.createPage({
+      path: `/projects/${project.permalink}`,
+      component: path.join(__dirname, "src/templates/project.tsx"),
+      context: {
+        project,
+      },
+    });
+  });
+};
