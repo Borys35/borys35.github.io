@@ -60,6 +60,111 @@ const ProjectPage = ({ data }: PageProps<any>) => {
         <header>
           <Container fluid>
             <Row>
+              <Col>
+                <div
+                  css={(theme) =>
+                    css({
+                      [theme.mq.lg]: {
+                        position: "relative",
+                        display: "grid",
+                        gridTemplateColumns: "1fr 2fr 1fr",
+                        gridTemplateRows: "3fr 1fr",
+                        height: "80vh",
+                      },
+                    })
+                  }
+                >
+                  <StaticImage
+                    src="../../images/projects-hero.png"
+                    alt=""
+                    placeholder="tracedSVG"
+                    css={(theme) =>
+                      css({
+                        pointerEvents: "none",
+                        marginTop: "-5rem",
+                        zIndex: -1,
+                        animation: `${mainImageFadeIn} 1s ${theme.timing} both`,
+
+                        [theme.mq.lg]: {
+                          gridArea: "1 / 1 / 3 / 4",
+                        },
+                        [theme.mq.xl]: {
+                          gridArea: "1 / 2 / 3 / 3",
+                        },
+                      })
+                    }
+                  />
+                  <div
+                    css={(theme) =>
+                      css({
+                        maxWidth: "max(60%, 360px)",
+                        [theme.mq.lg]: {
+                          gridArea: "2 / 1 / 3 / 2",
+                          maxWidth: "unset",
+                        },
+                      })
+                    }
+                  >
+                    <Heading
+                      level={1}
+                      css={(theme) =>
+                        css({
+                          paddingBottom: "0.15em",
+                          animation: `fade-in 1s ${theme.timing} .5s both`,
+                        })
+                      }
+                    >
+                      Projects
+                    </Heading>
+                    <Text
+                      transform="uppercase"
+                      size="small"
+                      css={(theme) =>
+                        css({
+                          marginTop: "1.5rem",
+                          animation: `fade-in 1s ${theme.timing} .6s both`,
+                        })
+                      }
+                    >
+                      Projects from 2019 to 2022. You can filter and view all of
+                      them.
+                    </Text>
+                  </div>
+                  <div
+                    css={(theme) =>
+                      css({
+                        marginTop: "3rem",
+                        [theme.mq.lg]: {
+                          marginTop: "0",
+                          gridArea: "2 / 3 / 3 / 4",
+                          display: "grid",
+                          placeContent: "flex-end",
+                        },
+                      })
+                    }
+                  >
+                    <Button
+                      size="large"
+                      onClick={() => {
+                        const el = document.getElementById("projects");
+                        el?.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                      }}
+                      css={(theme) =>
+                        css({
+                          animation: `fade-in 1s ${theme.timing} .7s both`,
+                        })
+                      }
+                    >
+                      Dive into
+                    </Button>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+            {/* <Row>
               <Col xl={4} lg={5} offset={{ xl: 1 }}>
                 <Heading
                   level={1}
@@ -138,7 +243,7 @@ const ProjectPage = ({ data }: PageProps<any>) => {
                   </Button>
                 </div>
               </Col>
-            </Row>
+            </Row> */}
           </Container>
         </header>
 
