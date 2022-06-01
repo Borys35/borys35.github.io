@@ -30,31 +30,39 @@ const ContactPage = () => {
     <Layout pageTitle="Contact">
       <Container fluid>
         <Row css={css({ minHeight: "80vh", padding: "2rem 0" })}>
-          <Col lg={6}>
-            <Heading
-              level={1}
-              css={(theme) =>
-                css({
-                  marginTop: "4rem",
-                  marginBottom: "2rem",
-                  animation: `fade-in 1s ${theme.timing} .5s both`,
-                })
-              }
+          <Col lg={8}>
+            <div
+              css={css({
+                marginTop: "4rem",
+                marginBottom: "6rem",
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "2rem 3rem",
+              })}
             >
-              Get in touch
-            </Heading>
-            <Text
-              transform="uppercase"
-              size="medium"
-              css={(theme) =>
-                css({
-                  marginBottom: "6rem",
-                  animation: `fade-in 1s ${theme.timing} .6s both`,
-                })
-              }
-            >
-              Waiting for your message.
-            </Text>
+              <Heading
+                level={1}
+                css={(theme) =>
+                  css({
+                    animation: `fade-in 1s ${theme.timing} .5s both`,
+                  })
+                }
+              >
+                Get in touch
+              </Heading>
+              <Text
+                transform="uppercase"
+                size="medium"
+                css={(theme) =>
+                  css({
+                    animation: `fade-in 1s ${theme.timing} .6s both`,
+                  })
+                }
+              >
+                Waiting for your message.
+              </Text>
+            </div>
             <div
               css={(theme) =>
                 css({
@@ -100,10 +108,15 @@ const ContactPage = () => {
             </div>
           </Col>
           <Col
-            lg={6}
-            css={css({
-              position: "relative",
-            })}
+            lg={4}
+            css={(theme) =>
+              css({
+                position: "relative",
+                [theme.mq.lg]: {
+                  marginTop: "6rem",
+                },
+              })
+            }
           >
             <StaticImage
               src="../images/earth.png"
@@ -123,7 +136,7 @@ const ContactPage = () => {
                   right: 0,
                   transform: `translate(${theme.horizontalPadding}, 2.1rem)`,
                   width: "70%",
-                  height: "65%",
+                  height: "100%",
                   zIndex: -1,
                   backgroundColor: theme.colors.text,
                 })
