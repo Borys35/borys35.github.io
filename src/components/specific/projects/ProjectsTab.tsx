@@ -49,8 +49,8 @@ const ProjectsTab: FC<Props> = ({ projects, ...props }) => {
       <Row>
         <Col /* xl={2} offset={{ xl: 1 }} */ lg={3}>
           <ReactStickyBox
-            offsetTop={96}
-            offsetBottom={48}
+            offsetTop={40}
+            offsetBottom={40}
             css={(theme) =>
               css({
                 marginBottom: "3rem",

@@ -15,7 +15,6 @@ const StyledButton = styled.button<Props>(
     all: "unset",
     position: "relative",
     fontWeight: "bold",
-    wordSpacing: ".5em",
     cursor: "pointer",
 
     "& svg": {
@@ -32,7 +31,7 @@ const StyledButton = styled.button<Props>(
   ({ theme, size }) => ({
     color: theme.colors.primary,
     fontSize:
-      size === "small" ? "1.5rem" : size === "medium" ? "2.25rem" : "3rem",
+      size === "small" ? "1.5rem" : size === "medium" ? "1.75rem" : "2rem",
 
     "&, & svg": {
       transition: `0.3s ${theme.timing}`,

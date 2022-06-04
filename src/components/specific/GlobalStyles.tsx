@@ -14,9 +14,6 @@ const GlobalStyles = () => {
           fontFamily: theme.fontFamily,
           WebkitTapHighlightColor: "transparent",
         },
-        "html, body": {
-          overflowX: "hidden",
-        },
         body: {
           position: "relative",
           backgroundColor: theme.colors.bg,
@@ -27,6 +24,7 @@ const GlobalStyles = () => {
           fontSize: "12px",
           maxWidth: theme.bp.xxl,
           overscrollBehaviorY: "contain",
+          overflowX: "hidden",
         },
         a: {
           textDecoration: "none",

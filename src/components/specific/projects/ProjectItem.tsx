@@ -16,6 +16,7 @@ const ProjectItem: FC<Props> = ({ name, tags, permalink, cover }) => {
       css={(theme) =>
         css({
           position: "relative",
+          borderLeft: `2px solid ${theme.colors.text}`,
           "& img": {
             transition: `0.5s ${theme.timing} !important`,
           },
@@ -34,7 +35,7 @@ const ProjectItem: FC<Props> = ({ name, tags, permalink, cover }) => {
         <GatsbyImage
           image={image}
           alt={name}
-          css={css({ borderRadius: "1rem" })}
+          // css={css({ borderRadius: "1rem" })}
         />
       ) : (
         <div

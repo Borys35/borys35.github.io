@@ -15,7 +15,7 @@ const StyledGrid = styled.div(
   ({ theme }) => ({
     gridTemplateColumns: "1fr",
     [theme.mq.md]: {
-      gridTemplateColumns: "repeat(auto-fill, minmax(360px, 1fr))",
+      gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
     },
   })
 );

@@ -149,7 +149,7 @@ const AboutPage = () => {
                     </Heading>
                   </Hidden>
                   <Text
-                    size="medium"
+                    size="small"
                     transform="uppercase"
                     css={(theme) =>
                       css({

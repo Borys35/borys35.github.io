@@ -18,7 +18,7 @@ const line = css({
   width: "1px",
   height: "100vh",
   background: theme.colors.black,
-  opacity: 0.1,
+  opacity: 0.05,
   marginLeft: "auto",
 });
 

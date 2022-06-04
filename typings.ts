@@ -15,6 +15,14 @@ export interface Project extends Node {
   name: string;
   permalink: string;
   tags: Tag[];
-  cover: ImageDataLike;
   featured: boolean;
+  year: string;
+  blocks: {
+    image?: ImageDataLike;
+    heading?: string;
+    text?: string;
+  }[];
+  sourceCode?: string;
+  demo?: string;
+  cover: ImageDataLike;
 }
