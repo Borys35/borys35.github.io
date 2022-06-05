@@ -72,7 +72,7 @@ const IndexPage = ({ data }: PageProps<any>) => {
                   css({
                     textAlign: "center",
                     marginBottom: "3rem",
-                    marginTop: "4rem",
+                    marginTop: "2rem",
                     paddingBottom: "1rem",
                     paddingRight: ".5rem",
                     animation: `fade-in 1s ${theme.timing} .5s both`,
@@ -177,7 +177,7 @@ const IndexPage = ({ data }: PageProps<any>) => {
         {/* About */}
         <Container fluid>
           <Row>
-            <Col offset={{ md: 3 }}>
+            <Col offset={{ md: 3, lg: 4, xl: 5 }}>
               <div
                 css={css({
                   position: "relative",

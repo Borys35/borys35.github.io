@@ -10,7 +10,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const StyledGrid = styled.div(
   {
     display: "grid",
-    gap: "4rem",
+    gap: "5rem 7rem",
   },
   ({ theme }) => ({
     gridTemplateColumns: "1fr",

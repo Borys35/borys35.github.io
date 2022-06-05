@@ -1,9 +1,10 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React, { FC } from "react";
 import { Col, Container, Row } from "react-grid-system";
 import ReactStickyBox from "react-sticky-box";
 import { Project } from "../../typings";
+import ContactSection from "../components/blocks/ContactSection";
 import Button from "../components/common/Button";
 import Heading from "../components/common/Heading";
 import SimpleButton from "../components/common/SimpleButton";
@@ -19,6 +20,16 @@ interface Props {
   };
 }
 
+// animations
+const contentFadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
 const ProjectTemplate: FC<Props> = ({ pageContext }) => {
   const { project, otherProjects } = pageContext;
   const { name, cover, tags, year, blocks, sourceCode, demo } = project;
@@ -26,13 +37,16 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
   return (
     <Layout pageTitle={name}>
       <Container fluid>
-        <Row>
+        <Row
+          css={css({
+            marginTop: "5rem",
+            marginBottom: "9rem",
+          })}
+        >
           <Col>
             <div
               css={(theme) =>
                 css({
-                  marginTop: "4rem",
-                  marginBottom: "6rem",
                   display: "flex",
                   flexDirection: "column",
                   gap: "2rem 1rem",
@@ -44,7 +58,16 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                 })
               }
             >
-              <Heading level={1}>{name}</Heading>
+              <Heading
+                level={1}
+                css={(theme) =>
+                  css({
+                    animation: `fade-in 1s ${theme.timing} 0.5s both`,
+                  })
+                }
+              >
+                {name}
+              </Heading>
               <div
                 css={css({
                   display: "flex",
@@ -53,7 +76,17 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                 })}
               >
                 {tags.map((tag, i) => (
-                  <ProjectTag key={`tag-${tag}-${i}`} tag={tag} />
+                  <ProjectTag
+                    key={`tag-${tag}-${i}`}
+                    tag={tag}
+                    css={(theme) =>
+                      css({
+                        animation: `fade-in 1s ${theme.timing} ${
+                          0.7 + i * 0.1
+                        }s both`,
+                      })
+                    }
+                  />
                 ))}
               </div>
               <Text
@@ -61,6 +94,8 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                   css({
                     fontStyle: "italic",
                     color: theme.colors.primary,
+                    paddingRight: ".15em",
+                    animation: `fade-in 1s ${theme.timing} 0.6s both`,
                   })
                 }
                 size="medium"
@@ -70,7 +105,14 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row
+          css={(theme) =>
+            css({
+              marginBottom: "16rem",
+              animation: `${contentFadeIn} 1.5s ${theme.timing} 1.5s both`,
+            })
+          }
+        >
           <Col lg={4} xl={3}>
             <ReactStickyBox offsetTop={40} offsetBottom={40}>
               <div
@@ -87,7 +129,7 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
               >
                 {sourceCode && (
                   <Button
-                    size="large"
+                    size="medium"
                     variant="secondary"
                     href={sourceCode}
                     toNewPage
@@ -96,23 +138,24 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                   </Button>
                 )}
                 {demo && (
-                  <Button size="large" href={demo} toNewPage>
+                  <Button size="medium" href={demo} toNewPage>
                     Open demo
                   </Button>
                 )}
               </div>
             </ReactStickyBox>
           </Col>
-          <Col offset={{ xl: 1 }} lg={8}>
+          <Col offset={{ lg: 1, xl: 2 }} lg={7}>
             <div
               css={(theme) =>
                 css({
-                  marginTop: "10rem",
                   display: "flex",
                   flexDirection: "column",
                   gap: "4rem",
+                  marginTop: "6rem",
                   [theme.mq.lg]: {
                     gap: "6rem",
+                    marginTop: "0",
                   },
                 })
               }
@@ -132,21 +175,16 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                       <GatsbyImage image={img} alt={heading || "Image"} />
                     )}
                     {heading && <Heading level={3}>{heading}</Heading>}
-                    {text && <Text>{text}</Text>}
+                    {text && <Text size="medium">{text}</Text>}
                   </section>
                 );
               })}
             </div>
           </Col>
         </Row>
-        <Row>
+        <Row css={css({ marginBottom: "12rem" })}>
           <Col xl={9}>
-            <div
-              css={css({
-                marginTop: "16rem",
-                marginBottom: "4rem",
-              })}
-            >
+            <div>
               <div
                 css={(theme) =>
                   css({
@@ -154,7 +192,7 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                     flexDirection: "column",
                     alignItems: "flex-start",
                     gap: "1rem 4rem",
-                    marginBottom: "3rem",
+                    marginBottom: "2rem",
                     [theme.mq.lg]: {
                       flexDirection: "row",
                       alignItems: "center",
@@ -162,7 +200,7 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
                   })
                 }
               >
-                <Heading level={2}>Other projects</Heading>
+                <Heading level={3}>Next projects</Heading>
                 <SimpleButton to="/projects#projects" size="small">
                   More projects
                 </SimpleButton>
@@ -171,6 +209,7 @@ const ProjectTemplate: FC<Props> = ({ pageContext }) => {
             </div>
           </Col>
         </Row>
+        <ContactSection />
       </Container>
     </Layout>
   );
