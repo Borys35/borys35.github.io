@@ -1,0 +1,1 @@
+import"./chunks/EnterScreen.astro_astro_type_script_index_0_lang.a34c915b.js";const o=document.querySelectorAll("#main-content>div>*"),r=new IntersectionObserver((e,s)=>{e.forEach(t=>{t.isIntersecting&&(t.target.classList.add("show"),s.unobserve(t.target))})},{threshold:.3});o.forEach(e=>{r.observe(e)});
