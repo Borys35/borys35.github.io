@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "home": "Strona główna",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "heading": "Niech twoja strona internetowa <0>zabłyśnie</0> w internecie",
+    "cta": "Zobacz moje prace",
+    "services": {
+      "title": "Co mogę zrobić",
+      "content": "Tworzenie stron internetowych,Projektowanie UI/UX,Tożsamość marki,SEO & reklamy"
+    },
+    "about": {
+      "title": "Kim jestem",
+      "content": "PL ipsum dolor sit amet, consectetur adipiscing elit. Duis volutpat enim ullamcorper dolor tempor, id tempus sem faucibus. Cras in rutrum eros, nec aliquet sem. Nunc a quam vel nunc scelerisque pellentesque. Proin non turpis ante. Nam in risus at sem hendrerit pulvinar eu sed ipsum. Suspendisse ac rhoncus elit. Donec feugiat lacus ac metus congue, at fringilla quam dictum. Nulla lacinia, metus vel volutpat auctor, turpis ipsum dictum lorem, ut congue dolor tortor ut neque. Phasellus cursus aliquam eleifend. Nullam finibus magna ut enim tempor, sed malesuada lacus vehicula. Suspendisse fringilla, ligula eget viverra pharetra, enim massa volutpat quam, aliquam ultrices sem lacus a ex. Nullam turpis ex, varius lacinia risus ut, pretium lacinia mauris. Sed at faucibus odio. Nulla pretium viverra turpis, id gravida orci dictum eu. Aenean pretium felis eget massa tristique interdum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis volutpat enim ullamcorper dolor tempor, id tempus sem faucibus. Cras in rutrum eros, nec aliquet sem. Nunc a quam vel nunc scelerisque pellentesque. Proin non turpis ante. Nam in risus at sem hendrerit pulvinar eu sed ipsum. Suspendisse ac rhoncus elit. Donec feugiat lacus ac metus congue, at fringilla quam dictum. Nulla lacinia, metus vel volutpat auctor, turpis ipsum dictum lorem, ut congue dolor tortor ut neque. Phasellus cursus aliquam eleifend. Nullam finibus magna ut enim tempor, sed malesuada lacus vehicula. Suspendisse fringilla, ligula eget viverra pharetra, enim massa volutpat quam, aliquam ultrices sem lacus a ex. Nullam turpis ex, varius lacinia risus ut, pretium lacinia mauris. Sed at faucibus odio. Nulla pretium viverra turpis, id gravida orci dictum eu. Aenean pretium felis eget massa tristique interdum."
+    },
+    "projects": {
+      "title": "Projekty"
+    },
+    "contact": {
+      "button": "Pogadajmy"
+    }
+  },
+  "contact": {
+    "heading": "Pogadajmy!",
+    "email": {
+      "label": "Twój e-mail",
+      "err-email": "Twój e-mail musi być poprawny",
+      "err-req": "To pole jest wymagane"
+    },
+    "message": {
+      "label": "Wiadomość",
+      "err-max": "Twoja wiadomość nie może być dłuższa niż 2000 znaków",
+      "err-req": "To pole jest wymagane"
+    },
+    "button": "Wyślij"
+  }
+}

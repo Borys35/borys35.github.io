@@ -1,0 +1,40 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Get in touch"
+  },
+  "home": {
+    "heading": "Making brands' websites <0>shine</0> on the internet",
+    "cta": "View my work",
+    "services": {
+      "title": "What I can do",
+      "content": "Web development|The great web experience is mostly about code. Without mobile view support, accessibility features, and a good code base overall, your website won't make any impression.///UI/UX Design|Your website is like your business card. This is the first view that a visitor will see. You want to engage and impress them.///Brand identity|No one wants to be in a shadow of a competition. Creating a vibrant, memorable logo and brand identity will help you gain more conversion and be more remarkable.///SEO|A solid appearance on the web is significant for any business. But it's meaningful to be visible to users. With help of SEO (Search Engine Optimization), you can show yourself on the first page in Google Searches."
+    },
+    "about": {
+      "title": "Who I am",
+      "content": "I have expertise in building web experiences. UI/UX designs, brand identity, and web development are the most important subjects in my journey. I love to make great user experiences for people (and robots). My programming journey is lasting 5 years now. After searching for my specialization, I chose web development and everything connected to it. Now I make websites, web apps, and web designs for 3 years."
+    },
+    "projects": {
+      "title": "Projects"
+    },
+    "contact": {
+      "button": "Let's talk"
+    }
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "email": {
+      "label": "Your e-mail",
+      "err-email": "Your e-mail must be a valid e-mail",
+      "err-req": "This field is required"
+    },
+    "message": {
+      "label": "Message",
+      "err-max": "Your message must not be longer than 2000 characters",
+      "err-req": "This field is required"
+    },
+    "button": "Send"
+  }
+}
